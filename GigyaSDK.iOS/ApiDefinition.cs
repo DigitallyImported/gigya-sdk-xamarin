@@ -98,7 +98,7 @@ namespace GigyaSDK.iOS
         GSRequest RequestForMethod (string method);
 
         [Static, Export ("requestForMethod:parameters:")]
-        GSRequest RequestForMethod (string method, NSDictionary parameters);
+        GSRequest RequestForMethod (string method, [NullAllowed] NSDictionary parameters);
 
         [Export ("method", ArgumentSemantic.Copy)]
         string Method { get; set; }
@@ -305,7 +305,7 @@ namespace GigyaSDK.iOS
         void LoadPlugin (string plugin);
 
         [Export ("loadPlugin:parameters:")]
-        void LoadPlugin (string plugin, NSDictionary parameters);
+        void LoadPlugin (string plugin, [NullAllowed] NSDictionary parameters);
 
         [Export ("plugin")]
         string Plugin { get; }
@@ -360,13 +360,13 @@ namespace GigyaSDK.iOS
         void ShowLoginDialogOver (UIViewController viewController, string provider);
 
         [Static, Export ("loginToProvider:parameters:completionHandler:")]
-        void LoginToProvider (string provider, NSDictionary parameters, GSUserInfoHandler handler);
+        void LoginToProvider (string provider, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("showLoginDialogOver:provider:parameters:completionHandler:")]
-        void ShowLoginDialogOver (UIViewController viewController, string provider, NSDictionary parameters, GSUserInfoHandler handler);
+        void ShowLoginDialogOver (UIViewController viewController, string provider, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("loginToProvider:parameters:over:completionHandler:")]
-        void LoginToProvider (string provider, NSDictionary parameters, UIViewController viewController, GSUserInfoHandler handler);
+        void LoginToProvider (string provider, [NullAllowed] NSDictionary parameters, [NullAllowed] UIViewController viewController, GSUserInfoHandler handler);
 
         [Static, Export ("showLoginProvidersDialogOver:")]
         void ShowLoginProvidersDialogOver (UIViewController viewController);
@@ -375,10 +375,10 @@ namespace GigyaSDK.iOS
         void ShowLoginProvidersPopoverFrom (UIView view);
 
         [Static, Export ("showLoginProvidersDialogOver:providers:parameters:completionHandler:")]
-        void ShowLoginProvidersDialogOver (UIViewController viewController, string [] providers, NSDictionary parameters, GSUserInfoHandler handler);
+        void ShowLoginProvidersDialogOver (UIViewController viewController, string [] providers, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("showLoginProvidersPopoverFrom:providers:parameters:completionHandler:")]
-        void ShowLoginProvidersPopoverFrom (UIView view, string [] providers, NSDictionary parameters, GSUserInfoHandler handler);
+        void ShowLoginProvidersPopoverFrom (UIView view, string [] providers, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("logout")]
         void Logout ();
@@ -393,13 +393,13 @@ namespace GigyaSDK.iOS
         void ShowAddConnectionDialogOver (UIViewController viewController, string provider);
 
         [Static, Export ("addConnectionToProvider:parameters:completionHandler:")]
-        void AddConnectionToProvider (string provider, NSDictionary parameters, GSUserInfoHandler handler);
+        void AddConnectionToProvider (string provider, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("showAddConnectionDialogOver:provider:parameters:completionHandler:")]
-        void ShowAddConnectionDialogOver (UIViewController viewController, string provider, NSDictionary parameters, GSUserInfoHandler handler);
+        void ShowAddConnectionDialogOver (UIViewController viewController, string provider, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("addConnectionToProvider:parameters:over:completionHandler:")]
-        void AddConnectionToProvider (string provider, NSDictionary parameters, UIViewController viewController, GSUserInfoHandler handler);
+        void AddConnectionToProvider (string provider, [NullAllowed] NSDictionary parameters, UIViewController viewController, GSUserInfoHandler handler);
 
         [Static, Export ("showAddConnectionProvidersDialogOver:")]
         void ShowAddConnectionProvidersDialogOver (UIViewController viewController);
@@ -408,10 +408,10 @@ namespace GigyaSDK.iOS
         void ShowAddConnectionProvidersPopoverFrom (UIView view);
 
         [Static, Export ("showAddConnectionProvidersDialogOver:providers:parameters:completionHandler:")]
-        void ShowAddConnectionProvidersDialogOver (UIViewController viewController, string [] providers, NSDictionary parameters, GSUserInfoHandler handler);
+        void ShowAddConnectionProvidersDialogOver (UIViewController viewController, string [] providers, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("showAddConnectionProvidersPopoverFrom:providers:parameters:completionHandler:")]
-        void ShowAddConnectionProvidersPopoverFrom (UIView view, string [] providers, NSDictionary parameters, GSUserInfoHandler handler);
+        void ShowAddConnectionProvidersPopoverFrom (UIView view, string [] providers, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
         [Static, Export ("removeConnectionToProvider:")]
         void RemoveConnectionToProvider (string provider);
@@ -420,19 +420,19 @@ namespace GigyaSDK.iOS
         void RemoveConnectionToProvider (string provider, GSUserInfoHandler handler);
 
         [Static, Export ("showPluginDialogOver:plugin:parameters:")]
-        void ShowPluginDialogOver (UIViewController viewController, string plugin, NSDictionary parameters);
+        void ShowPluginDialogOver (UIViewController viewController, string plugin, [NullAllowed] NSDictionary parameters);
 
         [Static, Export ("showPluginDialogOver:plugin:parameters:completionHandler:")]
-        void ShowPluginDialogOver (UIViewController viewController, string plugin, NSDictionary parameters, GSPluginCompletionHandler handler);
+        void ShowPluginDialogOver (UIViewController viewController, string plugin, [NullAllowed] NSDictionary parameters, GSPluginCompletionHandler handler);
 
         [Static, Export ("showPluginDialogOver:plugin:parameters:completionHandler:delegate:")]
-        void ShowPluginDialogOver (UIViewController viewController, string plugin, NSDictionary parameters, GSPluginCompletionHandler handler, GSPluginViewDelegate pluginViewDelegate);
+        void ShowPluginDialogOver (UIViewController viewController, string plugin, [NullAllowed] NSDictionary parameters, GSPluginCompletionHandler handler, GSPluginViewDelegate pluginViewDelegate);
 
         [Static, Export ("requestFacebookPublishPermissions:responseHandler:")]
         void RequestFacebookPublishPermissions (string permissions, GSPermissionRequestResultHandler handler);
 
         [Static, Export ("handleOpenURL:sourceApplication:annotation:")]
-        bool HandleOpenURL (NSUrl url, string sourceApplication, NSObject annotation);
+        bool HandleOpenURL ([NullAllowed] NSUrl url, [NullAllowed] string sourceApplication, [NullAllowed] NSObject annotation);
 
         [Static, Export ("handleDidBecomeActive")]
         void HandleDidBecomeActive ();
