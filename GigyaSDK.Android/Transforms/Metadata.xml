@@ -1,28 +1,28 @@
 ﻿<metadata>
-  <remove-node path="/api/package[@name='android.net.http']" />
-  <remove-node path="/api/package[@name='android.webkit']" />
-  <attr path="/api/package[@name='com.gigya.json']" name="managedName">GigyaSDK.Android.Json</attr>
-  <attr path="/api/package[@name='com.gigya.socialize']" name="managedName">GigyaSDK.Android</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android']" name="managedName">GigyaSDK.Android</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.login']" name="managedName">GigyaSDK.Android.Login</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.ui']" name="managedName">GigyaSDK.Android.UI</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']" name="managedName">GigyaSDK.Android.Event</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.utils']" name="managedName">GigyaSDK.Android.Utils</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.login.providers']" name="managedName">GigyaSDK.Android.Login.Providers</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSAccountsEventListener']/method[@name='onLogin']"
-        name="argsType">GSAccountsLoginEventArgs</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSAccountsEventListener']/method[@name='onLogout']"
-        name="argsType">GSAccountsLogoutEventArgs</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSConnectUIListener']/method[@name='onConnectionAdded']"
-        name="argsType">GSConnectUIConnectionAddedEventArgs</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSEventListener']/method[@name='onConnectionAdded']"
-        name="argsType">GSEventConnectionAddedEventArgs</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSEventListener']/method[@name='onConnectionRemoved']"
-        name="argsType">GSEventConnectionRemovedEventArgs</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSSocializeEventListener']/method[@name='onLogin']"
-        name="argsType">GSSocializeLoginEventArgs</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSSocializeEventListener']/method[@name='onLogout']"
-        name="argsType">GSSocializeLogoutEventArgs</attr>
-  <attr path="/api/package[@name='com.gigya.socialize.android.login.providers']/interface[@name='WebLoginActivity.WebLoginActivityCallback']"
-  		name="visibility">public</attr>
+	<remove-node path="/api/package[@name='android.net.http']" />
+	<remove-node path="/api/package[@name='android.webkit']" />
+    <remove-node path="/api/package[@name='com.gigya.socialize.android.event']" />
+	<attr path="/api/package[@name='com.gigya.json']" name="managedName">GigyaSDK.Android.Json</attr>
+	<attr path="/api/package[@name='com.gigya.socialize']" name="managedName">GigyaSDK.Android</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android']" name="managedName">GigyaSDK.Android</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.login']" name="managedName">GigyaSDK.Android.Login</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.ui']" name="managedName">GigyaSDK.Android.UI</attr>
+<!--	<attr path="/api/package[@name='com.gigya.socialize.android.event']" name="managedName">GigyaSDK.Android.Event</attr>-->
+	<attr path="/api/package[@name='com.gigya.socialize.android.utils']" name="managedName">GigyaSDK.Android.Utils</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.login.providers']" name="managedName">GigyaSDK.Android.Login.Providers</attr>
+<!--	<attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSAccountsEventListener']/method[@name='onLogin']" name="argsType">GSAccountsLoginEventArgs</attr>
+    <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSAccountsEventListener']/method[@name='onLogin']" name="managedName">AccountLogin</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSAccountsEventListener']/method[@name='onLogout']" name="argsType">GSAccountsLogoutEventArgs</attr>
+    <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSAccountsEventListener']/method[@name='onLogout']" name="managedName">AccountLogout</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSConnectUIListener']/method[@name='onConnectionAdded']" name="argsType">GSConnectUIConnectionAddedEventArgs</attr>
+    <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSConnectUIListener']/method[@name='onConnectionAdded']" name="managedName">ConnectionUIAdded</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSEventListener']/method[@name='onConnectionAdded']" name="argsType">GSEventConnectionAddedEventArgs</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSEventListener']/method[@name='onConnectionRemoved']" name="argsType">GSEventConnectionRemovedEventArgs</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSSocializeEventListener']/method[@name='onLogin']" name="argsType">GSSocializeLoginEventArgs</attr>
+    <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSSocializeEventListener']/method[@name='onLogin']" name="managedName">SocializeLogin</attr>
+	<attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSSocializeEventListener']/method[@name='onLogout']" name="argsType">GSSocializeLogoutEventArgs</attr>
+    <attr path="/api/package[@name='com.gigya.socialize.android.event']/interface[@name='GSSocializeEventListener']/method[@name='onLogout']" name="managedName">SocializeLogout</attr>
+-->
+	<attr path="/api/package[@name='com.gigya.socialize.android.login.providers']/interface[@name='WebLoginActivity.WebLoginActivityCallback']" name="visibility">public</attr>
+
 </metadata>
