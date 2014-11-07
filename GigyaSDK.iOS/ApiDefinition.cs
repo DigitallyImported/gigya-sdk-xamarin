@@ -218,6 +218,7 @@ namespace GigyaSDK.iOS
     }
 
     [Model, BaseType (typeof (NSObject))]
+    [Protocol]
     public partial interface GSSessionDelegate {
 
         [Export ("userDidLogin:")]
@@ -231,14 +232,15 @@ namespace GigyaSDK.iOS
     }
 
     [Model, BaseType (typeof (NSObject))]
+	[Protocol]
     public partial interface GSSocializeDelegate {
-
+		[Abstract]
         [Export ("userDidLogin:")]
         void UserDidLogin (GSUser user);
-
+		[Abstract]
         [Export ("userDidLogout")]
         void UserDidLogout ();
-
+		[Abstract]
         [Export ("userInfoDidChange:")]
         void UserInfoDidChange (GSUser user);
     }
@@ -344,11 +346,20 @@ namespace GigyaSDK.iOS
         [Static, Export ("session")]
         GSSession Session { get; set; }
 
+        [Static, Export("setSession:")]
+        void SetSession(GSSession session);
+
         [Static, Export ("sessionDelegate")]
         GSSessionDelegate SessionDelegate { get; set; }
 
+		[Static, Export ("setSessionDelegate:")]
+		void SetSessionDelegate (GSSessionDelegate sessionDelegate);
+
         [Static, Export ("socializeDelegate")]
         GSSocializeDelegate SocializeDelegate { get; set; }
+
+		[Static, Export ("setSocializeDelegate:")]
+		void SetSocializeDelegate (GSSocializeDelegate socializeDelegate);
 
         [Static, Export ("accountsDelegate")]
         GSAccountsDelegate AccountsDelegate { get; set; }

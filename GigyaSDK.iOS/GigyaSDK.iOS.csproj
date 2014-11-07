@@ -47,16 +47,12 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
   <ItemGroup>
     <ObjcBindingNativeLibrary Include="GigyaSDK.a" />
-    <ObjcBindingNativeLibrary Include="FacebookSDK.a" />
     <ObjcBindingNativeLibrary Include="GoogleOpenSource.a" />
     <ObjcBindingNativeLibrary Include="GooglePlus.a" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GigyaSDK.linkwith.cs">
       <DependentUpon>GigyaSDK.a</DependentUpon>
-    </Compile>
-    <Compile Include="FacebookSDK.linkwith.cs">
-      <DependentUpon>FacebookSDK.a</DependentUpon>
     </Compile>
     <Compile Include="GoogleOpenSource.linkwith.cs">
       <DependentUpon>GoogleOpenSource.a</DependentUpon>
