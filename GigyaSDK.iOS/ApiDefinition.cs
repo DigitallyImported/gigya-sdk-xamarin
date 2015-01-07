@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Drawing;
 
-using MonoTouch.ObjCRuntime;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using ObjCRuntime;
+using Foundation;
+using UIKit;
 
 namespace GigyaSDK.iOS
 {
@@ -325,7 +324,7 @@ namespace GigyaSDK.iOS
         string LoadingProgressText { get; set; }
 
         [Export ("javascriptLoadingTimeout")]
-        int JavascriptLoadingTimeout { get; set; }
+        nint JavascriptLoadingTimeout { get; set; }
     }
 
     [BaseType (typeof (NSObject))]
