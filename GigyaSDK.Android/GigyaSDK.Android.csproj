@@ -55,10 +55,10 @@
     <ReferenceJar Include="Jars\facebook-android-sdk.jar" />
     <ReferenceJar Include="Jars\android-support-v4.jar" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedJar Include="Jars\gigya-sdk-3.1.1.jar" />
-  </ItemGroup>
   <PropertyGroup>
     <JavaDocPaths>gigya-sdk-javadoc</JavaDocPaths>
   </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="Jars\gigya-sdk-3.1.2.jar" />
+  </ItemGroup>
 </Project>
