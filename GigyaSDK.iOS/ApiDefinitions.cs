@@ -450,6 +450,10 @@ namespace GigyaSDK.iOS
 		[Export ("session")]
 		GSSession Session { get; set; }
 
+		[Static]
+		[Export("setSession:")]
+		void SetSession(GSSession session);
+
 		// +(id<GSSessionDelegate>)sessionDelegate;
 		[Static]
 		[Export ("sessionDelegate")]
