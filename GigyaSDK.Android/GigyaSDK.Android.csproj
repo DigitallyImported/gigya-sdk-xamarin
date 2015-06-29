@@ -36,6 +36,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.22.1.1.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Facebook">
+      <HintPath>..\packages\Xamarin.Facebook.4.1.2.0\lib\MonoAndroid403\Xamarin.Facebook.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -43,6 +49,7 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\EnumFields.xml" />
@@ -51,14 +58,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Xamarin.Android.Bindings.targets" />
   <ItemGroup>
-    <ReferenceJar Include="Jars\google-play-services.jar" />
-    <ReferenceJar Include="Jars\facebook-android-sdk.jar" />
-    <ReferenceJar Include="Jars\android-support-v4.jar" />
+    <EmbeddedJar Include="Jars\gigya-sdk-3.2.1.jar" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="facebookandroid">
+      <Visible>False</Visible>
+      <Version>4.1.2.0</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <PropertyGroup>
     <JavaDocPaths>gigya-sdk-javadoc</JavaDocPaths>
   </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedJar Include="Jars\gigya-sdk-3.1.2.jar" />
-  </ItemGroup>
 </Project>
