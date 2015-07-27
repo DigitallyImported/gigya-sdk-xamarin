@@ -555,7 +555,7 @@ namespace GigyaSDK.iOS
 		// +(void)loginToProvider:(NSString *)provider parameters:(NSDictionary *)parameters completionHandler:(GSUserInfoHandler)handler;
 		[Static]
 		[Export ("loginToProvider:parameters:completionHandler:")]
-		void LoginToProvider (string provider, NSDictionary parameters, GSUserInfoHandler handler);
+        void LoginToProvider (string provider, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
 		// +(void)showLoginDialogOver:(UIViewController *)viewController provider:(NSString *)provider parameters:(NSDictionary *)parameters completionHandler:(GSUserInfoHandler)handler __attribute__((deprecated("Use loginToProvider:parameters:completionHandler: instead")));
 		[Static]
@@ -565,7 +565,7 @@ namespace GigyaSDK.iOS
 		// +(void)loginToProvider:(NSString *)provider parameters:(NSDictionary *)parameters over:(UIViewController *)viewController completionHandler:(GSUserInfoHandler)handler;
 		[Static]
 		[Export ("loginToProvider:parameters:over:completionHandler:")]
-		void LoginToProvider (string provider, NSDictionary parameters, UIViewController viewController, GSUserInfoHandler handler);
+        void LoginToProvider (string provider, [NullAllowed] NSDictionary parameters, UIViewController viewController, GSUserInfoHandler handler);
 
 		// +(void)showLoginProvidersDialogOver:(UIViewController *)viewController;
 		[Static]
@@ -684,7 +684,7 @@ namespace GigyaSDK.iOS
 		// +(BOOL)handleOpenURL:(NSURL *)url application:(UIApplication *)application sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 		[Static]
 		[Export ("handleOpenURL:application:sourceApplication:annotation:")]
-		bool HandleOpenURL (NSUrl url, UIApplication application, string sourceApplication, NSObject annotation);
+        bool HandleOpenURL (NSUrl url, UIApplication application, string sourceApplication, [NullAllowed] NSObject annotation);
 
 		// +(void)handleDidBecomeActive;
 		[Static]
