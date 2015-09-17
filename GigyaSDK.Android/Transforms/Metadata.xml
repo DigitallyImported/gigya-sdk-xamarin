@@ -1,10 +1,5 @@
 ﻿<metadata>
-  
-  <remove-node path="/api/package[@name='android.net.http']" />
-  <remove-node path="/api/package[@name='android.webkit']" />
-
   <!-- basic namespace changes -->
-  <attr path="/api/package[@name='com.gigya.json']" name="managedName">GigyaSDK.Android.Json</attr>
   <attr path="/api/package[@name='com.gigya.socialize']" name="managedName">GigyaSDK.Android</attr>
   <attr path="/api/package[@name='com.gigya.socialize.android']" name="managedName">GigyaSDK.Android</attr>
   <attr path="/api/package[@name='com.gigya.socialize.android.login']" name="managedName">GigyaSDK.Android.Login</attr>
