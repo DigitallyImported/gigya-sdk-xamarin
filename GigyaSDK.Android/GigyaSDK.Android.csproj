@@ -58,13 +58,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Xamarin.Android.Bindings.targets" />
   <ItemGroup>
-    <EmbeddedJar Include="Jars\gigya-sdk-3.2.2.jar" />
-  </ItemGroup>
-  <ItemGroup>
     <XamarinComponentReference Include="facebookandroid">
       <Version>4.5.1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="Jars\gigya-sdk-3.3.0.jar" />
   </ItemGroup>
   <PropertyGroup>
     <JavaDocPaths>gigya-sdk-javadoc</JavaDocPaths>
