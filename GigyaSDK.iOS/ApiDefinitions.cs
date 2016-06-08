@@ -684,7 +684,7 @@ namespace GigyaSDK.iOS
 		// +(BOOL)handleOpenURL:(NSURL *)url application:(UIApplication *)application sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 		[Static]
 		[Export ("handleOpenURL:application:sourceApplication:annotation:")]
-        bool HandleOpenURL (NSUrl url, UIApplication application, string sourceApplication, [NullAllowed] NSObject annotation);
+		bool HandleOpenURL (NSUrl url, UIApplication application, [NullAllowed] string sourceApplication, [NullAllowed] NSObject annotation);
 
 		// +(void)handleDidBecomeActive;
 		[Static]
