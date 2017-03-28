@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>GigyaSDK.Android</id>
+    <version>1.0.0</version>
+    <title>DI Version of Gigya for Android</title>
+    <authors>Kibi Hofmann, Digitally Imported</authors>
+    <owners>Gigya</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This encapsulates the Gigya SDK</description>
+    <releaseNotes>Version based on Android Support 25.1.1 and GPS 32.961.1</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+
+      <dependencies>
+         <group targetFramework="MonoAndroid">
+            <dependency id="Xamarin.Android.Support.v4" version="25.1.1" />
+            <dependency id="Xamarin.Android.Support.v7.CardView" version="25.1.1" />
+            <dependency id="Xamarin.GooglePlayServices.Auth" version="32.961.0" />
+         </group>
+      </dependencies>
+    
+  </metadata>
+
+  <files>
+     <file src="bin/release/GigyaSDK.Android.dll" target="lib/MonoAndroid41" />
+   </files>
+
+</package>
