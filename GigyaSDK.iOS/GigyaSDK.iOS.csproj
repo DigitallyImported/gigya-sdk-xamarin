@@ -39,9 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GigyaSDK.linkwith.cs">
-      <DependentUpon>GigyaSDK.a</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
@@ -51,6 +48,73 @@
     <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="GigyaSDK.a" />
+    <NativeReference Include="GigyaSDK.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="GoogleSymbolUtilities.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+      <WeakFrameworks>SafariServices, SystemConfiguration</WeakFrameworks>
+    </NativeReference>
+    <NativeReference Include="GoogleAppUtilities.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+    </NativeReference>
+    <NativeReference Include="GoogleSignIn.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+    </NativeReference>
+    <NativeReference Include="GoogleSignInDependencies.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GoogleSignIn.bundle\Info.plist" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\Roboto-Bold.ttf" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\google.png" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\google%402x.png" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\google%403x.png" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\ar.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\ca.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\cs.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\da.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\de.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\el.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\en.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\en_GB.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\es.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\es_MX.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\fi.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\fr.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\he.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\hr.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\hu.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\id.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\it.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\ja.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\ko.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\ms.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\nb.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\nl.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\pl.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\pt.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\pt_BR.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\pt_PT.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\ro.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\ru.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\sk.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\sv.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\th.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\tr.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\uk.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\vi.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\zh_CN.lproj\GoogleSignIn.strings" />
+    <BundleResource Include="Resources\GoogleSignIn.bundle\zh_TW.lproj\GoogleSignIn.strings" />
   </ItemGroup>
 </Project>

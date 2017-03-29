@@ -6,8 +6,8 @@ namespace GigyaSDK.iOS
 	public enum GSErrorCode : long
 	{
 		CanceledByUser = 200001,
+		AccountPendingRegistration = 206001,
 		MissingRequiredParameter = 400002,
-		InvalidAccessToken = 403001,
 		InvalidTime = 403002,
 		UnauthorizedUser = 403005,
 		PermissionDenied = 403007,
