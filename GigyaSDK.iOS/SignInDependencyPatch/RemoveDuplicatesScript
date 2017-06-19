@@ -1,0 +1,121 @@
+#!/bin/sh
+# Script is intended to cut the conflicting definitions from GoogleSignInDependencies.framework.
+# Conflicting definitions arise from use of GoogleSignInDependencies.framework together with Firebase SDK.
+# In order to use the script create a new directory and place both script and GoogleSignInDependencies.framework
+# which needs to be patched into that directory. Navigate to the directory and run sh RemoveSuplicateScript from the 
+# terminal. The successful patch process should end with SUCCESS log at the end. Don't pay attention if some 
+# intermediate logs indicating "xxxxx.o has no symbols" will popup - that is expected for some object files.
+# In current implementation there are the follwoing constants defined:
+# PLATFORMS - an array of iOS platforms the fat library is built for
+# LIB_NAME - the name of the framework to patch (the script may be adapted to patch other frameworks here)
+# DUPLICATES - an array of filenames containing duplicates and subject to removal
+#
+# IMPORTANT NOTE: the script should be started from the directory in which the .framework file is located!
+
+# Constants
+RED='\033[0;31m' # Red color
+GREEN='\033[0;32m' # Green color
+NC='\033[0m' # No Color
+PLATFORMS=("armv7" "i386" "x86_64" "arm64")
+LIB_NAME="GoogleSignInDependencies"
+SCRIPT_DIR=$(pwd)
+DUPLICATES=("GTMLogger" "GTMNSDictionary+URLArguments" "GTMSessionFetcher" "GTMSessionFetcherService" "GTMSessionUploadFetcher")
+
+# The script itself
+# Check the presense of the target framework
+if ! [[ -f "$LIB_NAME.framework/$LIB_NAME" ]] 
+	then
+		echo "${RED}ERROR:${NC} File not found!"
+		exit 1
+fi
+
+# Copy the binary to the working directory
+if [[ -f "$LIB_NAME" ]]
+	then
+		rm "$LIB_NAME"
+fi
+cp "$LIB_NAME.framework/$LIB_NAME" "$LIB_NAME"
+
+# Create appropriate folders for operations on the components of the framework
+for i in "${PLATFORMS[@]}"
+do
+	# First remove the directory if exists
+	if [[ -d "$i" ]]
+		then
+			rm -rf "$i"
+	fi
+
+	# Create a folder here
+	mkdir "$i"
+done
+
+# Extract thin libraries into the corresponding folders
+for i in "${PLATFORMS[@]}"
+do
+	lipo -thin "$i" "$LIB_NAME" -output "$i/$i.a"
+done
+
+# Remove old library - we don't need that anymore here in the working library
+rm "$LIB_NAME"
+
+delete_duplicate_object_files ()
+{
+	for j in "${DUPLICATES[@]}"
+	do
+		find . -type f -name "$j*" -exec rm -f {} \;
+	done
+}
+
+# Extract object files from the thin libraries
+libraries=()
+for i in "${PLATFORMS[@]}"
+do
+	cd "$SCRIPT_DIR/$i"
+	ar -x "$i.a" # Extract object files
+	if [[ $? -ne 0 ]] 
+		then
+			echo "${RED}ERROR:${NC} Object files were not extracted from $i.a"
+			exit 1
+	fi	 
+	rm -f "$i.a" # Remove parsed library
+	delete_duplicate_object_files # Remove actual duplicates
+	libtool -static *.o -o "$i.a" # Recombine everything left into thin library again
+	if [[ $? -ne 0 ]]
+		then
+			echo "${RED}ERROR:${NC} Failed to recombine #i.a"
+			exit 1
+	fi
+	cp "$i.a" "../$i.a"
+	libraries+=("$i.a")
+	
+done
+
+# Combine thin libraries into fat library
+cd "$SCRIPT_DIR"
+lipo -create "${libraries[@]}" -output "$LIB_NAME.framework/$LIB_NAME"
+if [[ $? -ne 0 ]]
+		then
+			echo "${RED}ERROR:${NC} Failed to create a fat library"
+			exit 1
+	fi
+
+# Clean everything
+for i in "${PLATFORMS[@]}"
+do
+	rm -rf "$i" # Remove working library subfolder
+	rm -f "$i.a" # Remove thin library
+done
+
+echo "${GREEN}SUCCESS:${NC} Framework patched!"
+
+
+
+
+
+
+
+
+
+
+
+

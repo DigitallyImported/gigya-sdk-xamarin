@@ -1,0 +1,2 @@
+Important Note!
+The GoogleSignInDependencies.framework should be patched before it can be used in the binding for current main project configuration. This is due to the need to cut the duplicate symbols when the project is used together with Firebase SDK.
