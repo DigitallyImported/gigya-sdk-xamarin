@@ -11,6 +11,8 @@
 # DUPLICATES - an array of filenames containing duplicates and subject to removal
 #
 # IMPORTANT NOTE: the script should be started from the directory in which the .framework file is located!
+# Structure of script is based on answer here
+# https://stackoverflow.com/a/41569955 (https://stackoverflow.com/questions/41217839/duplicate-symbols-when-integrating-firebase-and-google-sign-in-sdks-manually-wit)
 
 # Constants
 RED='\033[0;31m' # Red color
